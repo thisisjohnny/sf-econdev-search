@@ -1,0 +1,110 @@
+<template>
+    <lightning-card title="Search for Properties" icon-name="standard:search">
+        <lightning-layout multiple-rows="true" vertical-align="end">
+            <lightning-layout-item padding="around-small">
+                <lightning-input
+                    type="text"
+                    label="Site Name"
+                    placeholder="e.g. SI-000001"
+                    value={siteNameString}
+                    onchange={handleSiteNameChange}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small">
+                <lightning-combobox
+                    name="status"
+                    label="Site Status/Condition"
+                    placeholder="Choose status..."
+                    value={selectedStatusCondition}
+                    onchange={handleStatusConditionChange}
+                    options={statusConditionOptions}>
+                </lightning-combobox>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small">
+                <lightning-combobox
+                    name="zoning"
+                    label="Zoning"
+                    placeholder="Choose zoning..."
+                    value={selectedZoning}
+                    onchange={handleZoningChange}
+                    options={zoningOptions}>
+                </lightning-combobox>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small">
+                <lightning-input
+                    type="text"
+                    label="City"
+                    placeholder="e.g. San Francisco"
+                    value={cityString}
+                    onchange={handleCityChange}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small">
+                <lightning-input
+                    type="text"
+                    label="State"
+                    placeholder="e.g. California"
+                    value={stateString}
+                    onchange={handleStateChange}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small">
+                <lightning-input
+                    type="number"
+                    label="Max Interior Sq Ft"
+                    placeholder="e.g. 1500"
+                    value={maxSquareFootage}
+                    onchange={handleMaxSquareFootageChange}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small">
+                <lightning-input
+                    type="number"
+                    label="Max Plot Size Acreage"
+                    placeholder="e.g. 1"
+                    value={maxPlotSizeAcreage}
+                    onchange={handlePlotSizeAcreageChange}>
+                </lightning-input>
+            </lightning-layout-item>
+            
+            <!-- SEARCH BUTTON -->
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <lightning-button
+                        label="Search"
+                        variant="brand"
+                        onclick={handleSearch}
+                        icon-name="utility:search">
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-button
+                        label="Clear"
+                        variant="base"
+                        onclick={handleClear}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout>
+
+        <template if:true={sites}>
+            <lightning-card title="Properties" icon-name="custom:custom85">
+                <lightning-datatable
+                    key-field="id"
+                    columns={cols}
+                    data={sites}
+                    hide-checkbox-column={showCheckbox}
+                    onrowaction={handleRowAction}
+                    onrowselection={handleRowSelect}
+                    is-loading={isLoading}>
+                </lightning-datatable>
+            </lightning-card>
+        </template>
+    </lightning-card>
+</template>

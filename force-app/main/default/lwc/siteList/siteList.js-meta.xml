@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+
+    <masterLabel>Property Site Search and List</masterLabel>
+    <description>Provides a search component to find property sites by various criteria and lists the results in a datatable</description>
+
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage,lightningCommunity__Default">
+            <property name="showCheckbox" type="Boolean" default="true" label="Hide Selection Checkbox" description="To ensure proper functionality, do not change this value from its default"></property>
+        </targetConfig>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="showCheckbox" type="Boolean" default="false" label="Hide Selection Checkbox" description="To ensure proper functionality, do not change this value from its default"></property>
+            <property name="selectedProperties" type="String[]" label="Selected Properties" description="Collection of selected properties"></property>
+        </targetConfig>
+    </targetConfigs>
+    
+</LightningComponentBundle>
