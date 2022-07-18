@@ -1,18 +1,17 @@
-# Salesforce DX Project: Next Steps
+# Econdev Org Site Search
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+_For use in the Economic Development source or TF orgs_
 
-## How Do You Plan to Deploy Your Changes?
+LWCs, Apex controller, and MessageService channel for displaying sites from the Economic Development TF source org. Folks with an existing org can use this package to update the existing metadata.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Deploy to Your Org
 
-## Configure Your Salesforce DX Project
+### Disclaimer
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+**This package is provided without warranty.**
+This software has not been fully tested nor developed with strict security and access controls in mind. By installing this package in your org, you assume all risk of consequences and agree not to hold myself or my employer liable.
 
-## Read All About It
+To deploy this package to you Salesforce environment, use the [Salesforce DX Public Deployer](https://hosted-scratch.herokuapp.com/byoo?template=https://github.com/thisisjohnny/sf-econdev-search) and choose the option best for you.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+----
+_Made with_ ☕️ _in Reston_
